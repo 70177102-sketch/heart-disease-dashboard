@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 st.set_page_config(
     page_title="Heart Disease Dashboard Pro",
     layout="wide",
-    page_icon="❤️"
+    
 )
 
 # =========================================================
@@ -82,7 +82,7 @@ gender_col = "sex" if "sex" in df.columns else "gender"
 # =========================================================
 # SIDEBAR FILTERS
 # =========================================================
-st.sidebar.title("⚙️ Filters")
+st.sidebar.title(" Filters")
 
 # Age Filter
 age_range = st.sidebar.slider(
@@ -110,7 +110,7 @@ if gender != "All":
 # =========================================================
 # TITLE
 # =========================================================
-st.title("❤️ Heart Disease Analytics Dashboard Pro")
+st.title(" Heart Disease Analytics Dashboard Pro")
 st.markdown("<h3 style='text-align: center; color: #4b5563;'>Advanced Medical Data Insights</h3>", unsafe_allow_html=True)
 
 st.divider()
@@ -137,7 +137,7 @@ st.divider()
 # =========================================================
 # DATASET PREVIEW
 # =========================================================
-st.subheader("📌 Filtered Dataset")
+st.subheader(" Filtered Dataset")
 st.dataframe(filtered_df, use_container_width=True)
 
 st.divider()
@@ -151,7 +151,7 @@ sns.set_theme(style="whitegrid")
 row1_col1, row1_col2 = st.columns(2)
 
 with row1_col1:
-    st.subheader("❤️ Heart Disease Distribution")
+    st.subheader(" Heart Disease Distribution")
     
     # Create a copy to securely map text labels to prevent visualization offsets
     dist_df = filtered_df.copy()
@@ -194,7 +194,7 @@ with row1_col1:
     st.pyplot(fig1)
 
 with row1_col2:
-    st.subheader("📊 Age Distribution")
+    st.subheader(" Age Distribution")
     
     fig2, ax2 = plt.subplots(figsize=(6, 4.5))
     if not filtered_df.empty:
@@ -227,7 +227,7 @@ st.divider()
 row2_col1, row2_col2 = st.columns(2)
 
 with row2_col1:
-    st.subheader("💔 Chest Pain Type Analysis")
+    st.subheader(" Chest Pain Type Analysis")
     
     cp_df = filtered_df.copy()
     cp_map = {0: "Typical Angina", 1: "Atypical Angina", 2: "Non-Anginal", 3: "Asymptomatic"}
@@ -267,7 +267,7 @@ with row2_col1:
     st.pyplot(fig3)
 
 with row2_col2:
-    st.subheader("🔥 Correlation Heatmap")
+    st.subheader(" Correlation Heatmap")
     
     fig4, ax4 = plt.subplots(figsize=(7, 5))
     
